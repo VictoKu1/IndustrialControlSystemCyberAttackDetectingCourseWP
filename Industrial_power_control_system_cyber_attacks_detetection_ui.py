@@ -207,13 +207,13 @@ def model(test_df):
         features_list.remove('index')
     X = test_df[features_list]
     prediction1 = []
-    router = pickle.load(open('../P/router.pkl', 'rb'))
+    router = pickle.load(open('P/router.pkl', 'rb'))
     data_index=router.predict(X).astype(int)-1
     for i in range(0,14):
         features = rfecv_binary[i]
         # Filter the test data
         X1 = X[features]
-        model = pickle.load(open('../P/sc' + str(i) + '.pkl', 'rb'))
+        model = pickle.load(open('P/sc' + str(i) + '.pkl', 'rb'))
         # Predict the test data and change it to bipolar
         prediction1.append(model.predict(X1) * 2 - 1)
     prediction = []
