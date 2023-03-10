@@ -6,6 +6,7 @@ import joblib
 
 app = Flask(__name__)
 
+
 @app.route("/", methods=["GET", "POST"])
 def home():
     if request.method == 'POST':
@@ -25,6 +26,7 @@ def home():
 
     return render_template('index.html')
 
+
 @app.route("/results")
 def results():
     # Get the predictions from the session variable
@@ -36,9 +38,8 @@ def results():
     # Return the predictions as a list of strings
     return render_template('results.html', predictions=predictions)
 
+
 if __name__ == "__main__":
     # Run the app
-    app.secret_key = 'my-secret-key' # Set a secret key for the session
+    app.secret_key = 'my-secret-key'  # Set a secret key for the session
     app.run(host="0.0.0.0", port=5079)
-
-
