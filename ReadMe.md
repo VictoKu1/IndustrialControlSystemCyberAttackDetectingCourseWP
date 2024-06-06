@@ -22,4 +22,4 @@ The website:
 
 
 
-http://157.230.22.122:5079/
+http://csariel.xyz:5079/
